@@ -1,0 +1,88 @@
+{
+  "name": "@gx-solution/tools",
+  "version": "0.2.3",
+  "description": "国星-解决方案中心-JS公共方法库",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "clear": "rimraf ./lib",
+    "dev": "rollup -c -w",
+    "build": "npm run clear & rollup -c",
+    "lint": "eslint src --fix --ext .ts",
+    "format": "npx prettier --write ./src",
+    "release:patch": "npm run build & npm version patch & npm publish",
+    "release:minor": "npm run build & npm version minor & npm publish",
+    "release:major": "npm run build & npm version major & npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": " http://git.e479.cn/huangyunhui/solution-tools.git"
+  },
+  "keywords": [
+    "rollup",
+    "typescript",
+    "common tools"
+  ],
+  "author": "黄云辉",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@gx-solution/basic": "^0.0.1",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.45.2",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.2.4"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "browser": true,
+      "es2020": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off"
+    }
+  },
+  "prettier": "@gx-solution/basic/lib/prettier.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint",
+      "git add"
+    ]
+  }
+}
