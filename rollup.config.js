@@ -2,6 +2,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import typescript from 'rollup-plugin-typescript2';
+import serve from 'rollup-plugin-serve';
+import livereload from 'rollup-plugin-livereload';
+import {uglify} from 'rollup-plugin-uglify';
 import packageConfig from './package.json';
 
 const extensions = ['.js', '.ts', '.tsx'];
@@ -18,6 +21,14 @@ const commonConfig = {
     typescript({
       tsconfig: 'tsconfig.json',
       extensions,
+    }),
+    uglify(), // 压缩
+    livereload(), // 热更新，与serve结合使用
+    serve({
+      open: true, // 自动打开页面
+      port: 8000,
+      openPage: '/index.html', // 打开的页面
+      contentBase: '',
     }),
   ],
 };
