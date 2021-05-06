@@ -4,7 +4,7 @@
   "description": "国星-解决方案中心-JS公共方法库",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/types/index.d.ts",
   "scripts": {
     "clear": "rimraf ./lib",
     "start": "rollup -c -w",

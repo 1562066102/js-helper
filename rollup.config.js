@@ -21,6 +21,7 @@ const commonConfig = {
     typescript({
       tsconfig: 'tsconfig.json',
       extensions,
+      useTsconfigDeclarationDir: true,
     }),
     uglify(), // 压缩
     livereload(), // 热更新，与serve结合使用
