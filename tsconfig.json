@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "outDir": "./lib", // 输出目录
     "sourceMap": false, // 是否生成sourceMap
-    "target": "ESNext", // 编译目标
+    "target": "ES5", // 编译目标
     "module": "ESNext", // 模块类型
     "moduleResolution": "node", // 指定模块解析策略
     "strict": true, // 严格模式

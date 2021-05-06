@@ -7,8 +7,8 @@
   "types": "lib/types/index.d.ts",
   "scripts": {
     "clear": "rimraf ./lib",
-    "start": "rollup -c -w",
     "test": "jest",
+    "start": "npm run clear & rollup -c rollup.config.dev.js -w",
     "build": "npm run clear & rollup -c",
     "lint": "eslint src --fix --ext .ts",
     "format": "npx prettier --write ./src",
