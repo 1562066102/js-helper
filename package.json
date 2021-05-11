@@ -7,7 +7,9 @@
   "types": "lib/types/index.d.ts",
   "scripts": {
     "clear": "rimraf ./lib",
-    "test": "jest",
+    "test": "npx jest",
+    "test:watch": "npx jest --watchAll",
+    "test:coverage": "npx jest --coverage",
     "start": "npm run clear & rollup -c rollup.config.dev.js -w",
     "build": "npm run clear & rollup -c",
     "lint": "eslint src --fix --ext .ts",
