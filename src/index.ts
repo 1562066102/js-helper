@@ -9,6 +9,7 @@ import {
 } from './storage';
 import {Type, getType, isReferenceType} from './get-type';
 import {clone} from './clone';
+import debounce from './debounce';
 
 export {
   formatDate,
@@ -22,4 +23,5 @@ export {
   getType,
   isReferenceType,
   clone,
+  debounce,
 };
