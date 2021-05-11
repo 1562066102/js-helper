@@ -15,6 +15,7 @@
     "skipLibCheck": true, // 跳过检查.d.ts文件
     "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块默认导入
     "declaration": true, // 生成.d.ts文件
+    "noImplicitThis": false, // 控制当源文件中存在this的值是any的时候是否报错
     "declarationMap": false, // 生成定义sourceMap
     "declarationDir": "./lib/types", // 定义.d.ts文件输出目录
     "lib": ["esnext", "dom"], // 导入库类型定义
