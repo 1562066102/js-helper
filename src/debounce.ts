@@ -1,5 +1,5 @@
-type Debounce = (...args: any[]) => void;
-type DebounceCallback = (...args: any[]) => any;
+export type Debounce = (...args: any[]) => void;
+export type DebounceCallback = (...args: any[]) => any;
 
 export default function debounce(fn: DebounceCallback, delay = 200): Debounce {
   let timer: any = null;
