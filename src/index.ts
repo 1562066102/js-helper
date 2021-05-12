@@ -10,6 +10,7 @@ import {
 import {Type, getType, isReferenceType} from './get-type';
 import {clone} from './clone';
 import debounce from './debounce';
+import throttle from './/throttle';
 
 export {
   formatDate,
@@ -24,4 +25,5 @@ export {
   isReferenceType,
   clone,
   debounce,
+  throttle,
 };
