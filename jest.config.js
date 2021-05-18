@@ -25,7 +25,7 @@ module.exports = {
   roots: ['<rootDir>/test'],
 
   // 指定测试环境
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
