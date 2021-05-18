@@ -1,5 +1,5 @@
-import {formatDate} from './date';
-import {
+export {formatDate} from './date';
+export {
   getLocalStorage,
   setLocalStorage,
   removeLocalStorage,
@@ -7,28 +7,9 @@ import {
   setSessionStorage,
   removeSessionStorage,
 } from './storage';
-import {Type, getType, isReferenceType} from './get-type';
-import {clone} from './clone';
-import debounce from './debounce';
-import throttle from './throttle';
-import {add, subtract, multiply, divide} from './compute';
-
-export {
-  formatDate,
-  getLocalStorage,
-  setLocalStorage,
-  removeLocalStorage,
-  getSessionStorage,
-  setSessionStorage,
-  removeSessionStorage,
-  Type,
-  getType,
-  isReferenceType,
-  clone,
-  debounce,
-  throttle,
-  add,
-  subtract,
-  multiply,
-  divide,
-};
+export {Type, getType, isReferenceType} from './get-type';
+export {clone} from './clone';
+export {default as debounce} from './debounce';
+export {default as throttle} from './throttle';
+export {add, subtract, multiply, divide} from './compute';
+export {firstLetterUpperCase} from './string';
