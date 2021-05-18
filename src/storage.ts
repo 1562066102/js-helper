@@ -72,5 +72,5 @@ export function getSessionStorage(key: string): StorageValue {
  * @param key 主键
  */
 export function removeSessionStorage(key: string): void {
-  window.localStorage.removeItem(key);
+  window.sessionStorage.removeItem(key);
 }
