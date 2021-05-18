@@ -1,3 +1,4 @@
+/** Js数据类型 */
 export enum Type {
   Null = 'Null',
   Undefined = 'Undefined',
@@ -12,19 +13,21 @@ export enum Type {
   Array = 'Array',
 }
 
+/**
+ * 获取数据类型方法
+ * @param data 数据
+ * @returns 数据类型
+ */
 export function getType(data: any): string {
-  /**
-   * @description: 获取数据类型
-   * @param data 数据源
-   */
   return Object.prototype.toString.call(data).slice(8, -1);
 }
 
+/**
+ * 数据是否是引用类型
+ * @param data 数据源
+ * @returns 布尔值
+ */
 export function isReferenceType(data: any): boolean {
-  /**
-   * @description: 判断是否为引用类型数据
-   * @param data 数据源
-   */
   const type = getType(data);
   return type === Type.Object || type === Type.Array;
 }

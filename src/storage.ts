@@ -1,28 +1,33 @@
+/** storage方法返回的数据类型 */
 type StorageValue = null | string | number | {key: any} | any[];
 
-function handleValue(value: any): any {
+/**
+ * 转化为非空的值
+ * @param value 值
+ * @returns 不为null和undefined的值
+ */
+function convertNonEmptyValue(value: any): any {
   if (value === null || value === undefined) {
     return '';
   }
   return value;
 }
 
+/**
+ * 设置localStorage
+ * @param key 主键
+ * @param value 值
+ */
 export function setLocalStorage(key: string, value: any): void {
-  /**
-   * @description: 设置setLocalStorage
-   * @param {string} key
-   * @param {any} value
-   * @return {void}
-   */
-  window.localStorage.setItem(key, window.JSON.stringify(handleValue(value)));
+  window.localStorage.setItem(key, window.JSON.stringify(convertNonEmptyValue(value)));
 }
 
+/**
+ * 获取localStorage
+ * @param key 主键
+ * @return 值
+ */
 export function getLocalStorage(key: string): StorageValue {
-  /**
-   * @description: 获取getLocalStorage
-   * @param {string} key
-   * @return {StorageValue}
-   */
   const value: string | null | number = window.localStorage.getItem(key);
   if (value) {
     return window.JSON.parse(value);
@@ -31,31 +36,29 @@ export function getLocalStorage(key: string): StorageValue {
   }
 }
 
+/**
+ * 删除localStorage
+ * @param key 主键
+ */
 export function removeLocalStorage(key: string): void {
-  /**
-   * @description: 删除setLocalStorage
-   * @param {string} key
-   * @return {void}
-   */
   window.localStorage.removeItem(key);
 }
 
+/**
+ * 设置sessionStorage
+ * @param key 主键
+ * @param value 值
+ */
 export function setSessionStorage(key: string, value: any): void {
-  /**
-   * @description: 设置setSessionStorage
-   * @param {string} key
-   * @param {any} value
-   * @return {void}
-   */
-  window.sessionStorage.setItem(key, window.JSON.stringify(handleValue(value)));
+  window.sessionStorage.setItem(key, window.JSON.stringify(convertNonEmptyValue(value)));
 }
 
+/**
+ * 获取sessionStorage
+ * @param key 主键
+ * @return 值
+ */
 export function getSessionStorage(key: string): StorageValue {
-  /**
-   * @description: 获取setSessionStorage
-   * @param {string} key
-   * @return {StorageValue}
-   */
   const value: string | null | number = window.sessionStorage.getItem(key);
   if (value) {
     return window.JSON.parse(value);
@@ -64,11 +67,10 @@ export function getSessionStorage(key: string): StorageValue {
   }
 }
 
+/**
+ * 删除sessionStorage
+ * @param key 主键
+ */
 export function removeSessionStorage(key: string): void {
-  /**
-   * @description: 删除setLocalStorage
-   * @param {string} key
-   * @return {void}
-   */
   window.localStorage.removeItem(key);
 }

@@ -1,6 +1,16 @@
+/** 节流函数的返回类型 */
 export type Throttle = (...args: any[]) => void;
+
+/** 节流函数接收的回调函数类型 */
 export type ThrottleCallback = (...args: any[]) => any;
 
+/**
+ * 节流函数
+ * @description 事件持续执行，每xx时间内只执行一次，节省性能
+ * @param fn 要执行的事件
+ * @param delay 时间范围，默认为200ms
+ * @returns 函数
+ */
 export default function throttle(fn: ThrottleCallback, delay = 200): Throttle {
   let [last, timer]: [null | number, any] = [null, null];
   return function (...args) {
