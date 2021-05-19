@@ -27,6 +27,9 @@ module.exports = {
   // 指定测试环境
   testEnvironment: 'jsdom',
 
+  // 加载外部资源
+  testEnvironmentOptions: {resources: 'usable'},
+
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
@@ -138,9 +141,6 @@ module.exports = {
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
-
-  // Options that will be passed to the testEnvironment
-  // testEnvironmentOptions: {},
 
   // Adds a location field to test results
   // testLocationInResults: false,
