@@ -12,7 +12,7 @@ export type DebounceCallback = (...args: any[]) => void;
  * @returns 函数
  */
 export default function debounce<T extends DebounceCallback>(fn: T, delay = 200): Debounce {
-  let timer: NodeJS.Timeout | null = null;
+  let timer: any = null;
   return function (...args) {
     const self = this;
     if (timer) {

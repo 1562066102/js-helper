@@ -12,11 +12,11 @@ export type ThrottleCallback = (...args: any[]) => void;
  * @returns 函数
  */
 export default function throttle<T extends ThrottleCallback>(fn: T, delay = 200): Throttle {
-  let [last, timer]: [null | number, NodeJS.Timeout | null] = [null, null];
+  let [last, timer]: [null | number, any] = [null, null];
   return function (...args) {
     const self = this;
     const now = new Date().getTime();
-    clearTimeout(timer as NodeJS.Timeout);
+    clearTimeout(timer);
     if (!last || now - last >= delay) {
       // !last - 确保开始边界上的调用
       last = now;
