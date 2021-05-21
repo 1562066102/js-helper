@@ -6,7 +6,7 @@ import {getType, isReferenceType, Type} from './get-type';
  * @param data 任何类型的值
  * @returns 值一样但引用地址不同的另一个对象
  */
-export function clone(data: any): any {
+export function clone<T = any>(data: T): T {
   if (isReferenceType(data)) {
     const type = getType(data);
     const newObj: any = type === Type.Object ? {} : [];
