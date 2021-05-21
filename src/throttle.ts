@@ -2,7 +2,7 @@
 export type Throttle = (...args: any[]) => void;
 
 /** 节流函数接收的回调函数类型 */
-export type ThrottleCallback = (...args: any[]) => any;
+export type ThrottleCallback = (...args: any[]) => void;
 
 /**
  * 节流函数
@@ -11,12 +11,12 @@ export type ThrottleCallback = (...args: any[]) => any;
  * @param delay 时间范围，默认为200ms
  * @returns 函数
  */
-export default function throttle(fn: ThrottleCallback, delay = 200): Throttle {
-  let [last, timer]: [null | number, any] = [null, null];
+export default function throttle<T extends ThrottleCallback>(fn: T, delay = 200): Throttle {
+  let [last, timer]: [null | number, NodeJS.Timeout | null] = [null, null];
   return function (...args) {
     const self = this;
     const now = new Date().getTime();
-    clearTimeout(timer);
+    clearTimeout(timer as NodeJS.Timeout);
     if (!last || now - last >= delay) {
       // !last - 确保开始边界上的调用
       last = now;
