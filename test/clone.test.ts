@@ -44,7 +44,7 @@ describe('#clone', () => {
     expect(Object.is(obj, cloneObj)).toBe(false);
     expect(cloneObj).toStrictEqual(obj);
     cloneObj.a.b = 2;
-    cloneObj.b = 1;
+    cloneObj.b = [];
     expect(obj.a.b).toBe(1);
     expect(obj.b).toStrictEqual([1, 2, 3]);
   });
@@ -63,7 +63,7 @@ describe('#clone', () => {
     expect(cloneObj).toStrictEqual(obj);
     cloneObj[0] = 2;
     cloneObj[1] = [2];
-    cloneObj[2].a = 2;
+    (cloneObj[2] as {a: number}).a = 2;
     expect(obj[0]).toBe(1);
     expect(obj[1]).toStrictEqual([1]);
     expect((obj[2] as {a: number}).a).toBe(1);

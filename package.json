@@ -1,6 +1,6 @@
 {
   "name": "@gx-solution/tools",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "description": "国星-解决方案中心-JS公共方法库",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -39,6 +39,7 @@
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "canvas": "^2.8.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
