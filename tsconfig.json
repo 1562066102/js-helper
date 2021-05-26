@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./lib", // 输出目录
-    "sourceMap": false, // 是否生成sourceMap
+    "sourceMap": true, // 是否生成sourceMap
     "target": "ES5", // 编译目标
     "module": "ESNext", // 模块类型
     "moduleResolution": "node", // 指定模块解析策略
