@@ -1,4 +1,4 @@
-import {loadImage, fileToBase64} from '../src/index';
+import {loadImage, fileToBase64, base64ToFile} from '../src/index';
 
 const png = 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4052649468,2386213407&fm=26&gp=0.png';
 const jpg = 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3555314764,3806228019&fm=26.jpg';
@@ -54,5 +54,13 @@ describe('#fileToBase64', () => {
     const {file} = await loadImage(jpg, {file: true});
     const base64 = await fileToBase64(file as File);
     expect(base64).not.toBeUndefined();
+  });
+});
+describe('#base64ToFile', () => {
+  test(`base64ToFile`, async () => {
+    const {file} = await loadImage(jpg, {file: true});
+    const base64 = await fileToBase64(file as File);
+    const newFile = base64ToFile(base64, '图片');
+    expect(newFile).not.toBeUndefined();
   });
 });
