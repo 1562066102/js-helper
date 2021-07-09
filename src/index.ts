@@ -16,3 +16,4 @@ export {firstLetterUpperCase} from './string';
 export {default as loadImage} from './load-image';
 export {base64ToFile, fileToBase64} from './transform-base64-file';
 export {random} from './math';
+export {default as uuid} from './uuid';
