@@ -1,6 +1,3 @@
-/** storage方法返回的数据类型 */
-type StorageValue = null | string | number | {key: any} | any[];
-
 /**
  * 转化为非空的值
  * @param value 值
@@ -27,7 +24,7 @@ export function setLocalStorage(key: string, value: any): void {
  * @param key 主键
  * @return 值
  */
-export function getLocalStorage(key: string): StorageValue {
+export function getLocalStorage<T = any>(key: string): T | null {
   const value: string | null | number = window.localStorage.getItem(key);
   if (value) {
     return window.JSON.parse(value);
@@ -58,7 +55,7 @@ export function setSessionStorage(key: string, value: any): void {
  * @param key 主键
  * @return 值
  */
-export function getSessionStorage(key: string): StorageValue {
+export function getSessionStorage<T = any>(key: string): T | null {
   const value: string | null | number = window.sessionStorage.getItem(key);
   if (value) {
     return window.JSON.parse(value);

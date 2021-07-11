@@ -28,10 +28,12 @@ const commonConfig = {
 // 需要导出的模块类型
 const outputModel = [
   {
+    name: 'jsLib',
     file: packageConfig.main, // 通用模块
     format: 'umd',
   },
   {
+    name: packageConfig.name,
     file: packageConfig.module, // es6模块
     format: 'es',
   },
@@ -40,7 +42,6 @@ const outputModel = [
 export default outputModel.map(output => {
   return Object.assign({}, commonConfig, {
     output: {
-      name: packageConfig.name,
       ...output,
     },
   });
