@@ -5,9 +5,6 @@ import {random} from './math';
  * @param length 指定uuid长度
  */
 export default function uuid(length = 18): string {
-  if (!/^([1-9]\d*|[0]{1,1})$/.test(length + '')) {
-    throw new Error('uuid length must be a positive integer');
-  }
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
   const uuid: typeof chars = [];
   for (let i = length; i > 0; i--) {
