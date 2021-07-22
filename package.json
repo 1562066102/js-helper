@@ -2,8 +2,8 @@
   "name": "@hyh/js-helper",
   "version": "1.0.0",
   "description": "JS公共方法库",
-  "main": "lib/index.js",
-  "module": "lib/index.esm.js",
+  "main": "lib/js-helper.js",
+  "module": "lib/js-helper.esm.js",
   "types": "lib/types/index.d.ts",
   "scripts": {
     "clear": "rimraf ./lib",
