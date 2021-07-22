@@ -12,7 +12,7 @@ const extensions = ['.js', '.ts', '.tsx'];
 export default {
   input: 'src/index.ts',
   output: {
-    name: 'jsLib',
+    name: 'jsHelper',
     file: packageConfig.main, // 通用模块
     format: 'umd',
   },

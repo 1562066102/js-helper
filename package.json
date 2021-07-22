@@ -1,5 +1,5 @@
 {
-  "name": "@hyh/js-helper",
+  "name": "@huangyunhui/js-helper",
   "version": "1.0.0",
   "description": "JS公共方法库",
   "main": "lib/js-helper.js",
