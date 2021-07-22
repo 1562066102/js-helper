@@ -28,7 +28,7 @@ const commonConfig = {
 // 需要导出的模块类型
 const outputModel = [
   {
-    name: 'jsLib',
+    name: 'jsHelper',
     file: packageConfig.main, // 通用模块
     format: 'umd',
   },
