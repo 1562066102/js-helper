@@ -1,4 +1,4 @@
-import {Type, getType, isReferenceType} from '../src/index';
+import {Type, getType, isReference, isNumber, isString, isArray, isObject} from '../src/index';
 
 describe('#getType', () => {
   test(`get Null type`, () => {
@@ -39,15 +39,39 @@ describe('#getType', () => {
     expect(getType([1, 2])).toBe(Type.Array);
   });
   test(`{} is ReferenceType`, () => {
-    expect(isReferenceType({})).toBeTruthy();
+    expect(isReference({})).toBeTruthy();
   });
   test(`[] is ReferenceType`, () => {
-    expect(isReferenceType([])).toBeTruthy();
+    expect(isReference([])).toBeTruthy();
   });
   test(`'abc' is not ReferenceType`, () => {
-    expect(isReferenceType('abc')).toBeFalsy();
+    expect(isReference('abc')).toBeFalsy();
   });
   test(`123 is not ReferenceType`, () => {
-    expect(isReferenceType(123)).toBeFalsy();
+    expect(isReference(123)).toBeFalsy();
+  });
+  test(`123 is a number`, () => {
+    expect(isNumber(123)).toBeTruthy();
+  });
+  test(`'123' is not a number`, () => {
+    expect(isNumber('123')).toBeFalsy();
+  });
+  test(`'abc' is a string`, () => {
+    expect(isString('abc')).toBeTruthy();
+  });
+  test(`123 is not a string`, () => {
+    expect(isString(123)).toBeFalsy();
+  });
+  test(`{} is a object`, () => {
+    expect(isObject({})).toBeTruthy();
+  });
+  test(`123 is not a string`, () => {
+    expect(isObject(123)).toBeFalsy();
+  });
+  test(`[] is a array`, () => {
+    expect(isArray([])).toBeTruthy();
+  });
+  test(`123 is not a string`, () => {
+    expect(isArray(123)).toBeFalsy();
   });
 });
