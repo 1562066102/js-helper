@@ -1,4 +1,4 @@
-# @gx-solution/tools 开发说明文档
+# @huangyunhui/js-helper 开发说明文档
 
 ## 快速开始
 
@@ -21,7 +21,7 @@ $ npm run release:[patch/minor/major] // 发布npm（patch/minor/major三选一�
 - 构建工具：[Rollup](https://www.rollupjs.com/)
 - 测试框架：[Jest](https://www.jestjs.cn/)
 - 规范约束：[Typescript](https://www.tslang.cn/) | [ESLint](https://eslint.bootcss.com/) | [prettier](https://prettier.io/)
-- 编译目标：UMD 和 ES 双模块，使用 babel 将 es6 语法转换 es5，扩展兼容性
+- 编译目标：UMD 和 ES 双模块，使用 babel 将 es6 语法转换 es5，提升兼容性
 
 ## 项目规范
 
@@ -41,9 +41,9 @@ $ npm run release:[patch/minor/major] // 发布npm（patch/minor/major三选一�
 /**
  * 文件异步转换为base64
  * @param file 文件对象
- * @returns base64字符串
+ * @returns 文件base64字符串地址
  */
-public fileToBase64(file: File): string {
+function fileToBase64(file: File): string {
   // done
 }
 ```
@@ -64,8 +64,8 @@ public fileToBase64(file: File): string {
 
 ## 维护者
 
-[@黄云辉](http://git.e479.cn/huangyunhui)
+[@黄云辉](https://github.com/1562066102)
 
 ## 使用许可
 
-[MIT](LICENSE) © 成都国星宇航科技有限公司
+[MIT](LICENSE) Copyright (c) 2021-present, Huangyunhui

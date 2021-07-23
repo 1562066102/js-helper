@@ -36,4 +36,4 @@ const str = firstLetterUpperCase('aaa'); // 生成首字母大写字符串Aaa
 
 ## 使用许可
 
-[MIT](LICENSE) Copyright (c) 2013-present, Huangyunhui
+[MIT](LICENSE) Copyright (c) 2021-present, Huangyunhui
