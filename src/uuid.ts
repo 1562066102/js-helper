@@ -8,7 +8,7 @@ export default function uuid(length = 18): string {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
   const uuid: typeof chars = [];
   for (let i = length; i > 0; i--) {
-    uuid.push(chars[random(0, chars.length)]);
+    uuid.push(chars[random(0, chars.length - 1)]);
   }
   return uuid.join('');
 }
