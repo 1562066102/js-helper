@@ -1,5 +1,4 @@
 export * from './clone';
-export * from './compute';
 export * from './date';
 export {default as debounce} from './debounce';
 export * from './type';
